@@ -63,23 +63,7 @@ console.log(auth)
         </Toolbar>
       </AppBar>
     </React.Fragment>
-        {/* <AppBar position="static" color="default">
-            <Grid item sm={12} xs={12}>
-                <Toolbar>
-                    <h1>HSE AD</h1>
-                    {auth.isAuth ?
-                    <h2>
-
-                    </h2>:
-                    <h2>
-
-                    </h2>
-                
-                }
-                </Toolbar>
-            </Grid>
-        </AppBar> */}
-
+  
     </div>
   )
 }

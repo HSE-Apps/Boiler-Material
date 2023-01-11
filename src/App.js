@@ -14,10 +14,6 @@ function App() {
   const { instance, accounts } = useMsal();
 
 
-  //Login function through HSE AD
-   
-      //Uses aquired token from login to retrieve student information
-      //Puts all student information in auth variable
       useEffect(() => {
         if (accounts[0]) {
           instance
@@ -38,8 +34,7 @@ function App() {
         }
       }, [accounts]);
 
-      // Function that uses token to get student information such as grade
-      // Sends auth token to Microsoft Graph API through https request and recieves Student information in return
+     
       const testToken = async (token) => {
         const res = await axios.get("https://graph.microsoft.com/v1.0/me", {
           headers: {
@@ -76,7 +71,7 @@ console.log(auth)
         <h1>HSE AD Boilerplate</h1>
       {auth.isAuth ? 
                 <div>
-                  {/* <button onClick={()=> signOut()}> Signout</button> */}
+                 
                   <h1>{auth.user.role}</h1>
                   <h2>{"Name:" + auth.user.displayName}</h2>
                   <h2>{"Grade: " + auth.user.grade}</h2>
@@ -84,7 +79,7 @@ console.log(auth)
                 </div>  :
 
                 <div>
-                  {/* <button onClick={()=> login()}> Login</button> */}
+                
                 </div>
           }
     </AuthContext.Provider>
